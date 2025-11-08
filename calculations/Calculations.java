@@ -1,11 +1,27 @@
-package calculations;
+package backend;
 public class Calculations {
+    float wei_e ;
+    float gnu ;
+    float r ;
+    float person_m ;
+    float planet_m ;
+    float wei_nu
+    
+
+
     public static void main(String[ ] args){
-  // person mass variable*->  int person_m = ;
-  //planet mass variable*->  int planet_m = ;
-  // radius variable* -> r = ;
-  // find g   gnu = multiply(6.67, planet_m, 1/r, 1/r);
-  // find weight -> wei = multiply(gnu, person_m);
+        
+
+  
+  
+  // find weight -> float wei = multiply(gnu, person_m);
+  // return ;
+
+    }
+    public static float gravity(float wei_e,){
+// person weight on earth-> float person_m = wei_e/9.81 ;
+// find g  float gnu = multiply(6.67, planet_m, 1/r, 1/r) ;
+
     }
     System.out.println("Bruhh");
 }
