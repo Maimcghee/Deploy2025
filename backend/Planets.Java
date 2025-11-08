@@ -1,8 +1,8 @@
 package backend;
-import java.ArrayList;
+import java.util.ArrayList;
 
 public class Planets{
-    //Instance variables 
+    //planet attributes
     private Calculations calculator = new Calculations();
     String planetName;
     float planetMass;
@@ -10,27 +10,44 @@ public class Planets{
 
     //variables for user made planets
     String color;
-    String water;
-    String terrain;
+    boolean water = false;
+    boolean terrain = false;
+    boolean tree = false;
+    
 
     //Constructors 
-    public Planets makePlanet(String name,float mass, float gravity){
+    public makePlanet(String name,float mass, float gravity){
         this.planetName = name;
         this.planetGravity = gravity;
         this.planetMass = mass;
+        this.planetGravity
     }
 
     //for custom make planets 
-    public Planets makePlanet(String name,float mass, float gravity, String planetColor, String planetWater, String planetTerrain){
-        this.planetName = name;
-        this.planetGravity = gravity;
-        this.planetMass = mass;
-        this.color = planetColor;
-        this.water = planetWater;
-        this.terrain = planetTerrain;
+    public void setColor(String planetColor){
+        this.color = planetColor; 
     }
 
+    //setting Water Bool
+    public void hasWater(boolean containsWater){
+        if(containsWater == true){
+            water = true;
+        }
+    }
 
+    //setting Terrain Bool
+    public void hasTerrain(boolean containsTerrain){
+        if(containsTerrain == true){
+            terrain = true;
+        }
+    }
+
+    //setting Tree Bool
+    public void hasTree(boolean containsTree){
+        if(containsTree == true){
+            tree = true;
+        }
+    }
     
 
     
