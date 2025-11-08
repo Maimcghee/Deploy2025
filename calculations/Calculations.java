@@ -1,11 +1,11 @@
 package backend;
 public class Calculations {
-    float wei_e ;
-    float gnu ;
-    float r ;
-    float person_m ;
-    float planet_m ;
-    float wei_nu
+    float wei_e ;           // weight on earth (user input)
+    float gnu ;             // new gravity value (calculated)
+    float r ;               // planet radius (user selected)
+    float person_m ;        // person mass (calculated)
+    float planet_m ;        // planet mass (user input)
+    float wei_nu ;          // weight on new planet (calculated)
     
 
 
