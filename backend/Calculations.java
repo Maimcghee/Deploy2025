@@ -30,6 +30,10 @@ public class Calculations {
         
     }
     
+  public static double new_weight(float person_m, double gnu){
+    double wei_nu = person_m*gnu;
+    return wei_nu ;
+  }
 }
 
 //*  from user input/ 
