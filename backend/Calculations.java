@@ -22,12 +22,13 @@ public class Calculations {
     }
 
 
-//   public static float gravity(float planet_m, float r){
+   public static double gravity(float planet_m, float r){
              // person weight on earth-> float person_m = wei_e/9.81 ;
             // find g  float gnu = multiply(6.67, planet_m, 1/r, 1/r) ;
-    //    float gnu = multiply(6.67, planet_m, 1/r, 1/r) ;
+        double gnu = 6.67e-11*planet_m/(r*r) ;
+        return gnu;
         
-//    }
+    }
     
 }
 
