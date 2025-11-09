@@ -70,7 +70,7 @@ public class InteractivePlanets extends Application {
         instructionLabel = new Label("Select a base planet to start →");
         instructionLabel.setStyle("-fx-text-fill: #FFD700; -fx-font-size: 14px; -fx-font-style: italic;");
         
-        // Input fields - CENTERED
+        // Input fields for user entry
         VBox inputSection = new VBox(10);
         inputSection.setAlignment(Pos.CENTER);
         
