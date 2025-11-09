@@ -99,8 +99,8 @@ public class HomeScreen extends Application {
         
         // Planet Images (circles at bottom)
         // Temp images
-        ImageView planet1 = createPlanetImage("file:earth.png", 80);
-        ImageView planet2 = createPlanetImage("file:planet2.png", 80);
+        ImageView planet1 = createPlanetImage("file:mars.deploy.png", 90);
+        ImageView planet2 = createPlanetImage("file:earth.deploy.png", 90);
         
         // Go to PresetPlanetScreen
         planet1.setOnMouseClicked(e -> {
