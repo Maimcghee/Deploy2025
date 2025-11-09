@@ -26,7 +26,7 @@ public class Calculations {
    public static double gravity(float planet_m, float r){
         // person weight on earth-> float person_m = wei_e/9.81 ;
         // find g  float gnu = multiply(6.67, planet_m, 1/r, 1/r) ;
-        double massInKg = planet_m * 1e24;
+        double massInkg = planet_m * 1e24;
         double radiusInM = r * 1000;
         double gnu = 6.67e-11 * massInkg/ (radiusInM * radiusInM);
         return gnu;
