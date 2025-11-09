@@ -33,6 +33,7 @@
     </dependencies>
 
     <build>
+        <sourceDirectory>.</sourceDirectory>
         <plugins>
             <!-- Maven Compiler Plugin -->
             <plugin>
