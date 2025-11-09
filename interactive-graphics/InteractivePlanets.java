@@ -46,7 +46,6 @@ public class InteractivePlanets extends Application {
         this.userWeight = userWeight;
     }
     
-    @Override
     public void start(Stage stage) {
         
         Image bg = new Image("file:star_bg.png");
@@ -140,7 +139,7 @@ public class InteractivePlanets extends Application {
         leftButtons.setPadding(new Insets(0, 20, 0, 20));
         leftButtons.getChildren().addAll(topSpacer, calculateButton, saveButton, viewPlanetsButton, bottomSpacer);
         
-        // Right side - feature buttons in ROWS
+        // Right side - feature buttons in rows instead of columns
         Label basePlanetLabel = new Label("Base Planets");
         basePlanetLabel.setStyle("-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-font-weight: bold;");
         
@@ -195,7 +194,7 @@ public class InteractivePlanets extends Application {
                            "-fx-border-radius: 15px; -fx-background-radius: 15px;");
         rightSide.getChildren().addAll(basePlanetsBox, featuresBox);
         
-        // Main layout - 3 columns with proper spacing
+        // Three columns with set spacing
         HBox mainLayout = new HBox(60);
         mainLayout.setAlignment(Pos.CENTER);
         mainLayout.setPadding(new Insets(20, 50, 20, 50));
@@ -210,6 +209,7 @@ public class InteractivePlanets extends Application {
         stage.show();
     }
     
+    // When user selects one of three "base planet" options
     private void selectBasePlanet(String imagePath, String color) {
         hasPlanet = true;
         selectedBasePlanet = imagePath;
@@ -223,6 +223,7 @@ public class InteractivePlanets extends Application {
         planetBase.setFitHeight(380);
         planetBase.setPreserveRatio(true);
         
+        // Adds other features for the user to select
         waterLayer = new ImageView(new Image("file:river.deploy.png"));
         waterLayer.setFitWidth(380);
         waterLayer.setFitHeight(380);
@@ -244,6 +245,8 @@ public class InteractivePlanets extends Application {
         planetDisplay.getChildren().addAll(planetBase, waterLayer, terrainLayer, treesLayer);
     }
     
+
+    // Createimage button allows users selection to be displayed 
     private StackPane createImageButton(String imagePath, double size) {
         ImageView imageView = new ImageView(new Image(imagePath));
         imageView.setFitWidth(size);
@@ -255,6 +258,7 @@ public class InteractivePlanets extends Application {
         button.setStyle("-fx-background-color: rgba(20, 20, 60, 0.3); -fx-border-color: #00FFFF; " +
                        "-fx-border-width: 2px; -fx-border-radius: 10px; -fx-background-radius: 10px; " +
                        "-fx-cursor: hand;");
+        
         
         button.setOnMouseEntered(e -> {
             button.setStyle("-fx-background-color: rgba(20, 20, 60, 0.5); -fx-border-color: #00FFFF; " +
@@ -338,7 +342,7 @@ public class InteractivePlanets extends Application {
             weightOnPlanetLabel.setStyle("-fx-text-fill: #00FF00; -fx-font-size: 14px; -fx-font-weight: bold;");
             
         } catch (Exception e) {
-            weightOnPlanetLabel.setText("Error: Fill in all fields correctly");
+            weightOnPlanetLabel.setText("Error: Must enter value");
             weightOnPlanetLabel.setStyle("-fx-text-fill: #FF0000; -fx-font-size: 14px;");
         }
     }
@@ -363,7 +367,8 @@ public class InteractivePlanets extends Application {
             System.out.println("Terrain: " + newPlanets.getTerrain());
             System.out.println("Trees: " + newPlanets.getTree());
             
-            // Close this window and return to home page
+
+            // Close this window and return to home page when "saved planet" button is clicked
             stage.close();
             HomeScreen homeScreen = new HomeScreen();
             Stage homeStage = new Stage();
@@ -375,7 +380,7 @@ public class InteractivePlanets extends Application {
     }
     
     private void viewAllPlanets() {
-        System.out.println("=== ALL PLANETS IN SOLAR SYSTEM ===");
+        System.out.println("ALL PLANETS")
         
         for (Planets p : Planets.getSolarSystem()) {
             System.out.println("Planet: " + p.getName());

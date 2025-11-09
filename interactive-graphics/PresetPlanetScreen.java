@@ -1,14 +1,19 @@
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
+import javafx.scene.layout.HBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.geometry.Pos;
-import backend.Planet;
+import backend.Planets;
+import java.util.LinkedList;
 
 public class PresetPlanetScreen extends Application {
 
-    private Planet[] presetPlanets;
+    private Planets[] presetPlanets;
     private double userWeight = 150.0;//Defualt-> change later to be what the user enters
     
     //constructor for making planet here:
@@ -18,13 +23,14 @@ public class PresetPlanetScreen extends Application {
 
     private void initializePlanets(){
         //initializing real planets with their data
-        solarSystem = new Planet[]{
-            new Planet("Mars", 0.642f,3389.5f),
-            new Planet("Earth", 5.97f, 6371.0f)
+        presetPlanets = new Planets[]{
+            new Planets("Mars", 0.642f, 3389500f),
+            new Planets("Earth", 5.97e24f, 6371000f),
+            new Planets("Jupiter", 1.898e27f, 69911000f)
         };
         
         //adding preset planets to the solarSystem list
-        for(Planet p: presetPlanets){
+        for(Planets p: presetPlanets){
             p.addToSolarSystem();
         }
     }
@@ -34,7 +40,7 @@ public class PresetPlanetScreen extends Application {
         Label title = new Label("PRESET PLANETS");
         title.setStyle("-fx-font-size: 32px; -fx-text-fill: #00FFFF;");
         //solar System list of all planets
-        LinkedList<Planet> solarSystem = Planet.getSolarSystem();
+        LinkedList<Planets> solarSystem = Planets.getSolarSystem();
         
         // TODO: Use Planet class to show preset planets
         // TODO: Display Earth, Mars, Jupiter, etc.
@@ -45,7 +51,7 @@ public class PresetPlanetScreen extends Application {
         layout.getChildren().add(title);
 
         //creating planet buttons
-        for (Planet planet : solarSystem) {
+        for (Planets planet : solarSystem) {
             Button planetButton = createPlanetButton(planet);
             layout.getChildren().add(planetButton);
         }
@@ -57,11 +63,11 @@ public class PresetPlanetScreen extends Application {
     }
 
     //method to create planet Buttons
-    private Button createPlanetButton(Planet planet) {
+    private Button createPlanetButton(Planets planet) {
         // Load the image (updated path: planet_builder_images/[name].deploy.png)
         ImageView imageView = null;
         try {
-            Image image = new Image("planet_builder_images/" + planet.getName().toLowerCase() + ".deploy.png");
+            Image image = new Image("file:planet_builder_images/" + planet.getName().toLowerCase() + ".deploy.png");
             imageView = new ImageView(image);
             imageView.setFitWidth(100);  // Adjust size as needed
             imageView.setFitHeight(100);
@@ -80,13 +86,13 @@ public class PresetPlanetScreen extends Application {
     }
 
     //showing planet details in another window when button is pressed:
+    private void showPlanetDetails(Planets planet) {
         // Load the planet image (updated path)
-    private void showPlanetDetails(Planet planet) {
         Stage detailStage = new Stage();
         detailStage.setTitle(planet.getName() + " Details");
         ImageView imageView = null;
         try {
-            Image image = new Image("planet_builder_images/" + planet.getName().toLowerCase() + ".deploy.png");
+            Image image = new Image("file:planet_builder_images/" + planet.getName().toLowerCase() + ".deploy.png");
             imageView = new ImageView(image);
             imageView.setFitWidth(200);
             imageView.setFitHeight(200);
