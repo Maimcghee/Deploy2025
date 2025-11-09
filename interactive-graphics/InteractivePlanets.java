@@ -1,4 +1,3 @@
-package backend;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -205,8 +204,8 @@ public class InteractivePlanets extends Application {
             float mass = Float.parseFloat(massField.getText());
             float radius = Float.parseFloat(radiusField.getText());
             
-            Planets tempPlanets = new Planet(name, mass, radius);
-            float newWeight = tempPlanet.getNewUserWeight((float)userWeight);
+            Planets tempPlanets = new Planets(name, mass, radius);
+            float newWeight = tempPlanets.getNewUserWeight((float)userWeight);
             
             weightOnPlanetLabel.setText("Your weight on " + name + ": " + newWeight + " lbs");
             
@@ -222,19 +221,19 @@ public class InteractivePlanets extends Application {
             float mass = Float.parseFloat(massField.getText());
             float radius = Float.parseFloat(radiusField.getText());
             
-            Planets newPlanets = new Planet(name, mass, radius);
-            newPlanet.setColor(planetColor);
-            newPlanet.setWater(hasWater);
-            newPlanet.setTerrain(hasTerrain);
-            newPlanet.setTree(hasTrees);
-            newPlanet.addToSolarSystem();
+            Planets newPlanets = new Planets(name, mass, radius);
+            newPlanets.setColor(planetColor);
+            newPlanets.setWater(hasWater);
+            newPlanets.setTerrain(hasTerrain);
+            newPlanets.setTree(hasTrees);
+            newPlanets.addToSolarSystem();
             
             System.out.println("Planets saved!");
-            System.out.println("Name: " + newPlanet.getName());
-            System.out.println("Color: " + newPlanet.getColor());
-            System.out.println("Water: " + newPlanet.getWater());
-            System.out.println("Terrain: " + newPlanet.getTerrain());
-            System.out.println("Trees: " + newPlanet.getTree());
+            System.out.println("Name: " + newPlanets.getName());
+            System.out.println("Color: " + newPlanets.getColor());
+            System.out.println("Water: " + newPlanets.getWater());
+            System.out.println("Terrain: " + newPlanets.getTerrain());
+            System.out.println("Trees: " + newPlanets.getTree());
             
             stage.close();
             
@@ -246,7 +245,7 @@ public class InteractivePlanets extends Application {
     private void viewAllPlanets() {
         System.out.println("=== ALL PLANETS IN SOLAR SYSTEM ===");
         
-        for (Planets p : Planet.getSolarSystem()) {
+        for (Planets p : Planets.getSolarSystem()) {
             System.out.println("Planet: " + p.getName());
             System.out.println("  Mass: " + p.planetMass);
             System.out.println("  Radius: " + p.planetRadius);
