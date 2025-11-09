@@ -28,7 +28,7 @@ public class Calculations {
         // find g  float gnu = multiply(6.67, planet_m, 1/r, 1/r) ;
         double massInkg = planet_m * 1e24;
         double radiusInM = r * 1000;
-        double gnu = 6.67e-11 * massInKg/ (radiusInM * radiusInM);
+        double gnu = 6.67e-11 * massInkg/ (radiusInM * radiusInM);
         return gnu;
         
     }
