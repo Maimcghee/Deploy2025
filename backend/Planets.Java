@@ -2,6 +2,9 @@ package backend;
 import java.util.ArrayList;
 import Calculations;
 
+
+
+
 public class Planets{
     //planet attributes
     
@@ -92,7 +95,7 @@ public class Planets{
         return false;
     }
 
-    public sttaic LinkedList<Planet> getSolarSystem(){
+    public static LinkedList<Planet> getSolarSystem(){
         return solarSystem;
     }
     
