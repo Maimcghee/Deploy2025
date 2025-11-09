@@ -35,7 +35,7 @@ public class Planets{
 
     //getter Method to return useres weight on new planet
     public float getNewUserWeight(float userEarthWeight){
-        userWeight = mass_p(userEarthWeight);
+        userWeight = (float)Calculations.new_weight((float)Calculations.mass_p(userEarthWeight), this.planetGravity);
         return userWeight;
     }
 
@@ -82,7 +82,7 @@ public class Planets{
 
     //getting planet Name
     public void getName(){
-        return this.name;
+        return this.planetname;
     }
 
     //adding Planet to Solar System
