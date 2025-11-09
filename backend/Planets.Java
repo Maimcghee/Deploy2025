@@ -33,6 +33,12 @@ public class Planets{
 
     }
 
+    //getter Method to return useres weight on new planet
+    public float getNewUserWeight(float userEarthWeight){
+        userWeight = mass_p(userEarthWeight);
+        return userWeight;
+    }
+
     //for custom make planets 
     public void setColor(String planetColor){
         this.color = planetColor; 
