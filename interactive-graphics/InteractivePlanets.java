@@ -383,7 +383,7 @@ public class InteractivePlanets extends Application {
     }
     
     private void viewAllPlanets() {
-        System.out.println("ALL PLANETS")
+        System.out.println("ALL PLANETS");
         
         for (Planets p : Planets.getSolarSystem()) {
             System.out.println("Planet: " + p.getName());

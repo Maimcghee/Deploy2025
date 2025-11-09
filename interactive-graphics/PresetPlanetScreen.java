@@ -28,14 +28,11 @@ public class PresetPlanetScreen extends Application {
     private void initializePlanets(){
         //initializing real planets with their data
         presetPlanets = new Planets[]{
-<<<<<<< HEAD
-            new Planets("Mars", 0.642f,3389.5f),
-            new Planets("Earth", 5.97f, 6371.0f)
-=======
+
             new Planets("Mars", 0.642f, 3389500f),
             new Planets("Earth", 5.97e24f, 6371000f),
             new Planets("Jupiter", 1.898e27f, 69911000f)
->>>>>>> 4babc715e239e75c0a2ea5f074aac73939e6567b
+
         };
         
         //adding preset planets to the solarSystem list
@@ -94,13 +91,7 @@ public class PresetPlanetScreen extends Application {
         return button;
     }
 
-    //showing planet details in another window when button is pressed:
     private void showPlanetDetails(Planets planet) {
-        // Load the planet image (updated path)
-<<<<<<< HEAD
-    private void showPlanetDetails(Planets planet) {
-=======
->>>>>>> 4babc715e239e75c0a2ea5f074aac73939e6567b
         Stage detailStage = new Stage();
         detailStage.setTitle(planet.getName() + " Details");
         ImageView imageView = null;
