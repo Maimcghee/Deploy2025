@@ -11,10 +11,7 @@ public class Calculations {
     
 
 
-    public static void main(String[ ] args){
-  // find weight -> float wei = multiply(gnu, person_m);
-  // return ;
-    }
+    
     
     public static double mass_p(float wei_e){
     double person_m = wei_e*.45359237/9.80665 ;
