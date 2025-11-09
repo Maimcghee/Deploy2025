@@ -13,6 +13,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.layout.*;
+
+// Import created class 
 import backend.Planets;
 
 public class InteractivePlanets extends Application {
