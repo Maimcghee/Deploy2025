@@ -28,8 +28,10 @@ public class InteractivePlanets extends Application {
     private boolean hasTerrain = false;
     private boolean hasTrees = false;
     private boolean hasWater = false;
-    private String planetColor = "blue";
-    private String selectedBasePlanet = "";
+
+    
+    private String planetColor = "pink"; // Default color if none is selcted 
+    private String selectedBasePlanet = ""; // Default empty so hardcoded image can be set when buttons are selected
     
     private TextField planetNameField;
     private TextField massField;
