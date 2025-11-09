@@ -70,7 +70,7 @@ public class InteractivePlanets extends Application {
         instructionLabel = new Label("Select a base planet to start →");
         instructionLabel.setStyle("-fx-text-fill: #FFD700; -fx-font-size: 14px; -fx-font-style: italic;");
         
-        // Input fields for user entry
+        // Input fields for user entry for custom information
         VBox inputSection = new VBox(10);
         inputSection.setAlignment(Pos.CENTER);
         
@@ -106,13 +106,12 @@ public class InteractivePlanets extends Application {
         emptyLabel.setStyle("-fx-text-fill: rgba(255, 255, 255, 0.3); -fx-font-size: 18px;");
         planetDisplay.getChildren().add(emptyLabel);
         
-        // Center section - title, weight, instruction, inputs, planet
         VBox centerSection = new VBox(20);
         centerSection.setAlignment(Pos.CENTER);
         centerSection.getChildren().addAll(title, weightLabel, weightOnPlanetLabel, instructionLabel, 
                                             inputSection, planetDisplay);
         
-        // Action buttons - LEFT SIDE positioned lower
+        // Action buttons on left hand side of screen for usewr to select options 
         Region topSpacer = new Region();
         VBox.setVgrow(topSpacer, Priority.ALWAYS);
         
@@ -143,7 +142,7 @@ public class InteractivePlanets extends Application {
         leftButtons.setPadding(new Insets(0, 20, 0, 20));
         leftButtons.getChildren().addAll(topSpacer, calculateButton, saveButton, viewPlanetsButton, bottomSpacer);
         
-        // Right side - feature buttons in rows instead of columns
+        // Right side of screen displays feature buttons in rows instead of columns
         Label basePlanetLabel = new Label("Base Planets");
         basePlanetLabel.setStyle("-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-font-weight: bold;");
         
