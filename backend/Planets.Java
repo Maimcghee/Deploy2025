@@ -1,6 +1,6 @@
 package backend;
 import java.util.ArrayList;
-import Calculations;
+import java.util.LinkedList;// import Calculations;
 
 
 
@@ -8,11 +8,11 @@ import Calculations;
 public class Planets{
     //planet attributes
     
-    String planetName;
-    float planetMass;
+    public String planetName;
+    public float planetMass;
     float userWeight;
-    float planetRadius;
-    float planetGravity;//planets gravitational pull
+    public float planetRadius;
+    public float planetGravity;//planets gravitational pull
 
     //variables for user made planets
     String color;
@@ -21,15 +21,15 @@ public class Planets{
     boolean tree = false;
 
     //Solar System Array List
-    private static LinkedList<Planet> solarSystem = new LinkedList<>();
+    private static LinkedList<Planets> solarSystem = new LinkedList<>();
     
 
     // Basic Constructor
-    public  void Planet(String name,float mass, float radius){
+    public Planets(String name,float mass, float radius){
         this.planetName = name;
         this.planetRadius = radius;
         this.planetMass = mass;
-        this.planetGravity = Calculations.gravity(mass, radius);//rams gravity calculator 
+        this.planetGravity = (float)Calculations.gravity(mass, radius);//rams gravity calculator 
 
     }
 
@@ -81,8 +81,8 @@ public class Planets{
     }
 
     //getting planet Name
-    public void getName(){
-        return this.planetname;
+    public String getName(){
+        return this.planetName;
     }
 
     //adding Planet to Solar System
@@ -92,7 +92,7 @@ public class Planets{
 
     //method to delete planet -> remove from solar system
     public static boolean deletePlanet(String planetName){
-        for(Planet p: solarSystem){
+        for(Planets p: solarSystem){
             if(p.getName().equals(planetName)){
                 solarSystem.remove(p);
                 return true;
@@ -101,7 +101,7 @@ public class Planets{
         return false;
     }
 
-    public static LinkedList<Planet> getSolarSystem(){
+    public static LinkedList<Planets> getSolarSystem(){
         return solarSystem;
     }
     
