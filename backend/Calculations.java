@@ -16,7 +16,7 @@ public class Calculations {
   // return ;
     }
     public static double mass_p(float wei_e){
-    double person_m = wei_e/9.81 ;
+    double person_m = wei_e*.45359237/9.80665 ;
     return person_m;
 
     }
