@@ -24,7 +24,8 @@ public class HomeScreen extends Application {
         
         // Background 
         // Temp image
-        Image bg = new Image("file:blue.png");
+        Image bg = new Image("file:star_bg.png");
+
         BackgroundImage bgImg = new BackgroundImage(bg, BackgroundRepeat.NO_REPEAT, 
             BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, 
             new BackgroundSize(100, 100, true, true, false, true));
@@ -131,9 +132,10 @@ public class HomeScreen extends Application {
         VBox layout = new VBox(20);
         layout.setAlignment(Pos.CENTER);
         layout.setPadding(new Insets(40));
-        layout.setStyle("-fx-background-color: rgba(10, 10, 40, 0.75); -fx-border-color: #00FFFF; " +
-                       "-fx-border-width: 3px; -fx-border-radius: 25px; -fx-background-radius: 25px; " +
-                       "-fx-effect: dropshadow(gaussian, #000000, 30, 0.7, 0, 0);");
+        layout.setStyle("-fx-background-color: rgba(10, 10, 40, 0.3); -fx-border-color: #00FFFF; " +
+               "-fx-border-width: 2px; -fx-border-radius: 25px; -fx-background-radius: 25px; " +
+               "-fx-effect: dropshadow(gaussian, #000000, 20, 0.5, 0, 0);");
+
         layout.setMaxWidth(450);
         layout.getChildren().addAll(title, weightLabel, weightInput, makePlanetButton, exampleLabel, planetBox);
         
