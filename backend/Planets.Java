@@ -25,7 +25,7 @@ public class Planets{
     
 
     // Basic Constructor
-    public Planet(String name,float mass, float radius){
+    public  void Planet(String name,float mass, float radius){
         this.planetName = name;
         this.planetRadius = radius;
         this.planetMass = mass;
